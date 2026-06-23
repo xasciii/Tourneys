@@ -103,6 +103,15 @@ class TournamentManager(
         if (broadcast) Bukkit.broadcast(messages.component("tournament-cancelled"))
     }
 
+    fun restart(sender: org.bukkit.command.CommandSender) {
+        cancel(false)
+        teamManager.reset()
+        matches.clear()
+        activeArenaNames.clear()
+        state = TournamentState.OPEN
+        Bukkit.broadcast(messages.component("tournament-restarted", mapOf("tournament" to configManager.settings.displayName)))
+    }
+
     fun status(): String {
         return "State: ${state.name}, teams: ${teamManager.registeredTeams().size}, matches: ${matches.size}, active: ${matches.count { it.status == MatchStatus.ACTIVE || it.status == MatchStatus.COUNTDOWN }}"
     }

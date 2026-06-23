@@ -1,7 +1,7 @@
 prefix: "<gold>Tourneys</gold> <dark_gray>»</dark_gray> "
 
 messages:
-  usage: "<gray>Use /tourney open, close, start, bracket, team, arena, or kit.</gray>"
+  usage: "<gray>Use /tourney open, close, start, restart, bracket, team, arena, or kit.</gray>"
   usage-team: "<red>Use /tourney team create, invite <player>, accept <team>, leave, or list.</red>"
   usage-arena: "<red>Use /tourney arena create <name>, setspawn <arena> teamA|teamB|spectator, delete <name>, or list.</red>"
   usage-kit: "<red>Use /tourney kit save while holding the kit inventory.</red>"
@@ -12,6 +12,7 @@ messages:
   registration-closed: "<gold>Registration closed.</gold> <gray>{teams} teams are in the bracket.</gray>"
   tournament-started: "<gold>The tournament has started.</gold>"
   tournament-cancelled: "<red>The tournament was cancelled.</red>"
+  tournament-restarted: "<gold>{tournament}</gold> <yellow>was restarted. Registration is open again.</yellow>"
   tournament-finished: "<gold>Tournament finished.</gold> <green>{winner} won.</green>"
   registration-not-open: "<red>Registration is not open.</red>"
   already-in-team: "<red>You are already in a team.</red>"

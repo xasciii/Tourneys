@@ -41,6 +41,7 @@ class TourneyCommand(
             "close" -> admin(sender, configManager.settings.permissions.close) { tournamentManager.close(sender) }
             "start" -> admin(sender, configManager.settings.permissions.start) { tournamentManager.start(sender) }
             "cancel" -> admin(sender, configManager.settings.permissions.cancel) { tournamentManager.cancel(true) }
+            "restart" -> admin(sender, configManager.settings.permissions.restart) { tournamentManager.restart(sender) }
             "status" -> admin(sender, configManager.settings.permissions.admin) { sender.sendMessage(tournamentManager.status()) }
             "reload" -> admin(sender, configManager.settings.permissions.reload) { reload(sender) }
             "bracket" -> bracket(sender)
@@ -297,7 +298,7 @@ class TourneyCommand(
     private fun rootTabs(prefix: String): MutableList<String> {
         return filter(
             prefix,
-            listOf("open", "close", "start", "cancel", "status", "reload", "bracket", "team", "arena", "kit")
+            listOf("open", "close", "start", "cancel", "restart", "status", "reload", "bracket", "team", "arena", "kit")
         )
     }
 

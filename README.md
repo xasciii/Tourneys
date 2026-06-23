@@ -69,6 +69,7 @@ Tourneys is intended for empty event servers or dedicated tournament worlds wher
 - `/tourney close` - Close registration and generate the bracket.
 - `/tourney start` - Start tournament matches.
 - `/tourney cancel` - Cancel the active tournament.
+- `/tourney restart` - Reset the current event and reopen registration.
 - `/tourney status` - Show current tournament state.
 - `/tourney reload` - Reload config when no tournament is running.
 - `/tourney bracket` - Open the bracket GUI or print bracket info to console.
@@ -97,6 +98,7 @@ Operators have admin permissions by default through `plugin.yml`.
 - `tourney.admin.close` - Access to `/tourney close`.
 - `tourney.admin.start` - Access to `/tourney start`.
 - `tourney.admin.cancel` - Access to `/tourney cancel`.
+- `tourney.admin.restart` - Access to `/tourney restart`.
 - `tourney.admin.reload` - Access to `/tourney reload`.
 - `tourney.admin.arena` - Access to arena management commands.
 - `tourney.admin.kit` - Access to `/tourney kit save`.

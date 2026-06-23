@@ -88,6 +88,7 @@ data class PermissionConfig(
     val close: String,
     val start: String,
     val cancel: String,
+    val restart: String,
     val reload: String,
     val arena: String,
     val kit: String,

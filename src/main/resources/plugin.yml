@@ -27,6 +27,9 @@ permissions:
   tourney.admin.cancel:
     description: Cancel the tournament
     default: op
+  tourney.admin.restart:
+    description: Restart the tournament event and reopen registration
+    default: op
   tourney.admin.reload:
     description: Reload tournament config
     default: op

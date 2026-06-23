@@ -105,6 +105,7 @@ class ConfigManager(private val plugin: TourneyPlugin) {
                 close = config.getString("permissions.close", "tourney.admin.close") ?: "tourney.admin.close",
                 start = config.getString("permissions.start", "tourney.admin.start") ?: "tourney.admin.start",
                 cancel = config.getString("permissions.cancel", "tourney.admin.cancel") ?: "tourney.admin.cancel",
+                restart = config.getString("permissions.restart", "tourney.admin.restart") ?: "tourney.admin.restart",
                 reload = config.getString("permissions.reload", "tourney.admin.reload") ?: "tourney.admin.reload",
                 arena = config.getString("permissions.arena", "tourney.admin.arena") ?: "tourney.admin.arena",
                 kit = config.getString("permissions.kit", "tourney.admin.kit") ?: "tourney.admin.kit",
