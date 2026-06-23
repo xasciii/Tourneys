@@ -2,7 +2,7 @@
 
 ## Overview
 
-Tourneys is a lightweight Paper tournament plugin for configurable team-based Minecraft events. It handles registration, team creation, invites, brackets, arenas, match flow, kits, spectators, byes, winners, and tournament cleanup.
+Tourneys is a lightweight Paper tournament plugin for configurable team based Minecraft events. It handles registration, team creation, invites, brackets, arenas, match flow, kits, spectators, byes, winners, and tournament cleanup.
 
 The default configuration is suitable for a 2v2 NethPot event, but the plugin is not locked to that format. Team size, kits, arenas, active matches, messages, titles, bracket display, and most tournament behavior can be changed through `config.yml`.
 
@@ -209,10 +209,10 @@ Recommended setup:
 
 ## Credits
 
-Maintainer: ASC
+Maintainer: [asc](https://github.com/xasciii)
 
 Built as a standalone Kotlin Paper plugin for configurable Minecraft tournament events.
 
 ## License
 
-No license has been specified yet.
+This project is licensed under the [GPL3 License](https://github.com/xasciii/Tourneys/).
