@@ -1,0 +1,20 @@
+snapshot:
+  enabled: false
+
+bracket-url:
+  enabled: false
+  value: "https://example.com/bracket"
+
+placeholders:
+  enabled: true
+  identifier: "tourneys"
+  no-team: ""
+  nametag-format: "{team} "
+
+# PlaceholderAPI placeholders for TAB:
+# %tourneys_team% = team tag, for example &a[43]
+# %tourneys_nametag% = team tag plus trailing space, for example '&a[43] '
+# %tourneys_team_plain% = tag without color code
+# %tourneys_team_color% = team color code
+# %tourneys_team_number% = team number
+# %tourneys_in_team% = true or false

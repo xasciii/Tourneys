@@ -1,0 +1,102 @@
+tournament:
+  display-name: "<gold><bold>Tourneys</bold></gold>"
+  type-name: "2v2 NethPot"
+
+# Change this for 1v1, 2v2, 3v3, squads, or any other team size.
+team:
+  size: 2
+  minimum-teams: 2
+  maximum-teams: 32
+  allow-incomplete-teams-on-close: false
+  remove-incomplete-teams-on-close: true
+  names:
+    random: true
+    custom: false
+    format: "{color}[{number}]"
+    number-min: 100
+    number-max: 999
+  colors:
+    - "&a"
+    - "&b"
+    - "&c"
+    - "&d"
+    - "&e"
+    - "&6"
+    - "&9"
+    - "&f"
+
+permissions:
+  admin: "tourney.admin"
+  open: "tourney.admin.open"
+  close: "tourney.admin.close"
+  start: "tourney.admin.start"
+  cancel: "tourney.admin.cancel"
+  reload: "tourney.admin.reload"
+  arena: "tourney.admin.arena"
+  kit: "tourney.admin.kit"
+  player: "tourney.player"
+  team: "tourney.player.team"
+  bracket: "tourney.player.bracket"
+
+# Use /tourney arena setspawn for arenas. Lobby and fallback spectator can be edited here.
+spawns:
+  lobby:
+    world: "world"
+    x: 0.5
+    y: 80.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+  fallback-spectator:
+    world: "world"
+    x: 0.5
+    y: 90.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+
+arenas: {}
+
+# max-active-matches controls parallel matches. Use 1 for one match at a time.
+matches:
+  max-active-matches: 1
+  countdown-before-match-starts: 10
+  delay-after-match-ends: 5
+  delay-before-returning-to-lobby: 5
+  death-lightning-effect-enabled: true
+  death-sounds-enabled: true
+  allow-rejoin-during-active-match: true
+  send-eliminated-players-to-spectator: true
+  clear-drops-between-matches: true
+  clear-inventories-on-match-start: true
+  give-kit-on-match-start: true
+  tie-behavior: "random"
+
+blocked-commands:
+  - "spawn"
+  - "home"
+  - "warp"
+  - "kit"
+  - "tpaccept"
+
+bracket:
+  inventory:
+    enabled: true
+    title: "<gold>{type} Bracket</gold>"
+    rows: 6
+    auto-rows: true
+    materials:
+      waiting: "GRAY_CONCRETE"
+      countdown: "YELLOW_CONCRETE"
+      active: "YELLOW_CONCRETE"
+      finished: "LIME_CONCRETE"
+    item:
+      name: "<gold>Match {match}</gold> <dark_gray>|</dark_gray> <white>Round {round}</white>"
+      lore:
+        - "<gray>Status:</gray> <white>{status}</white>"
+        - "<gray>Arena:</gray> <white>{arena}</white>"
+        - "<gray>Team A:</gray> <white>{teamA}</white>"
+        - "<gray>Players:</gray> <white>{playersA}</white>"
+        - "<gray>Team B:</gray> <white>{teamB}</white>"
+        - "<gray>Players:</gray> <white>{playersB}</white>"
+        - "<gray>Winner:</gray> <green>{winner}</green>"

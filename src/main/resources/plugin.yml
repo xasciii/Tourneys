@@ -1,0 +1,47 @@
+name: Tourneys
+version: '${version}'
+main: org.asc.tourneys.Tourneys
+api-version: '1.21'
+load: POSTWORLD
+softdepend:
+  - PlaceholderAPI
+commands:
+  tourney:
+    description: Tournament control command
+    usage: /tourney
+    aliases:
+      - tournament
+permissions:
+  tourney.admin:
+    description: Full tournament administration
+    default: op
+  tourney.admin.open:
+    description: Open tournament registration
+    default: op
+  tourney.admin.close:
+    description: Close tournament registration
+    default: op
+  tourney.admin.start:
+    description: Start the tournament
+    default: op
+  tourney.admin.cancel:
+    description: Cancel the tournament
+    default: op
+  tourney.admin.reload:
+    description: Reload tournament config
+    default: op
+  tourney.admin.arena:
+    description: Manage tournament arenas
+    default: op
+  tourney.admin.kit:
+    description: Save the tournament kit from an inventory
+    default: op
+  tourney.player:
+    description: Player tournament access
+    default: true
+  tourney.player.team:
+    description: Team command access
+    default: true
+  tourney.player.bracket:
+    description: Bracket command access
+    default: true
