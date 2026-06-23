@@ -1,67 +1,64 @@
-# Tourneys
+<div align="center">
+  <h1>Tourneys</h1>
+  <img alt="License" src="https://img.shields.io/github/license/xasciii/Tourneys">
+  <img alt="GitHub Release" src="https://img.shields.io/github/release/xasciii/Tourneys.svg">
+  <br><br>
+  <a href="https://github.com/xasciii/Tourneys/releases/latest"><img alt="Download" src="https://img.shields.io/badge/-Download-blue?style=for-the-badge&logo=github"></a>
+  <a href="https://discord.gg/ZmdNWv8vW6"><img alt="Discord" src="https://img.shields.io/badge/-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"></a>
+</div>
 
 ## Overview
 
-Tourneys is a lightweight Paper tournament plugin for configurable team based Minecraft events. It handles registration, team creation, invites, brackets, arenas, match flow, kits, spectators, byes, winners, and tournament cleanup.
+Tourneys is a lightweight Paper tournament plugin for configurable team-based Minecraft events. It handles registration, team creation, invites, brackets, arenas, match flow, kits, spectators, byes, and cleanup.
 
-The default configuration is suitable for a 2v2 NethPot event, but the plugin is not locked to that format. Team size, kits, arenas, active matches, messages, titles, bracket display, and most tournament behavior can be changed through `config.yml`.
+The default configuration targets a 2v2 NethPot event, but the plugin is not locked to that format. Team size, kits, arenas, messages, and most tournament behaviour can be changed through `config.yml`.
 
 Tourneys is intended for empty event servers or dedicated tournament worlds where staff control the full player experience.
 
 ## Table of Contents
 
-- Supported Platforms & Versions
-- Features
-- Tournament Flow
-- Commands
-- Permission Nodes
-- Installation
-- Arena Setup
-- Kit Setup
-- Configuration
-- Recommended Event Server Setup
-- Credits
-- License
+- [Showcase](#showcase)
+- [Supported Platforms & Versions](#supported-platforms--versions)
+- [Features](#features)
+- [Commands](#commands)
+- [Permission Nodes](#permission-nodes)
+- [Installation](#installation)
+- [Arena Setup](#arena-setup)
+- [Kit Setup](#kit-setup)
+- [Configuration](#configuration)
+- [PlaceholderAPI](#placeholderapi)
+- [Credits](#credits)
+- [License](#license)
+
+## Showcase
+<img width="1810" height="661" alt="image" src="https://github.com/user-attachments/assets/7025a13e-1bc0-4045-8929-670c916986b2" />
+<img width="560" height="95" alt="image" src="https://github.com/user-attachments/assets/5f013e5b-e4c9-4c7f-b0a9-0254aad9ae0f" />
+
+
 
 ## Supported Platforms & Versions
 
 | Platform | Supported Versions |
-| --- | --- |
+|---|---|
 | Paper and compatible forks | 1.21+ |
-| Spigot | Should work where the Paper API features used by the plugin are available |
+| Spigot | Where Paper API features are available |
 
 ## Features
 
-- Configurable Team Size - Supports 1v1, 2v2, 3v3, squads, and other team sizes.
-- Configurable Kits - Admins can save their current inventory as the tournament kit using `/tourney kit save`.
-- Arena System - Each arena has Team A, Team B, and spectator spawns.
-- Randomized Brackets - Registration close generates randomized matchups.
-- Byes - Odd team counts automatically advance one team.
-- Parallel Matches - Run one match at a time by default, or multiple matches if enough arenas exist.
-- Bracket GUI - Optional inventory GUI showing waiting, active, and finished matches.
-- External Bracket URL - Optional broadcast after registration closes.
-- Snapshot API File - Optional `snapshot.json` output for overlays or websites.
-- PlaceholderAPI Support - Optional placeholders for TAB nametag prefixes.
-- Spectator Handling - Dead or eliminated players can be moved to spectator mode and spectator spawn.
-- Rejoin Support - Players can rejoin active matches if enabled.
-- Configurable Messages - Messages, titles, and actionbars are configurable with MiniMessage styling.
-- Runtime Reload - Reload config safely when no tournament is running.
-
-## Tournament Flow
-
-1. Admin opens registration.
-2. Players create teams.
-3. Captains invite teammates.
-4. Players accept invites.
-5. Players can leave or disband teams during registration.
-6. Admin closes registration.
-7. Tourneys generates a randomized bracket.
-8. Admin starts the tournament.
-9. Matches run using available arenas.
-10. Winners advance each round.
-11. Odd team counts receive byes.
-12. Tournament ends when one team remains.
-13. Players return to lobby after the configured delay.
+- **Configurable Team Size** - Supports 1v1, 2v2, 3v3, squads, and other team sizes.
+- **Configurable Kits** - Save your current inventory as the tournament kit with `/tourney kit save`.
+- **Arena System** - Each arena has Team A, Team B, and spectator spawns.
+- **Randomised Brackets** - Closing registration generates randomised matchups automatically.
+- **Byes** - Odd team counts automatically advance one team.
+- **Parallel Matches** - Run one match at a time, or multiple if enough arenas exist.
+- **Bracket GUI** - Optional inventory GUI showing waiting, active, and finished matches.
+- **External Bracket URL** - Optional broadcast after registration closes.
+- **Snapshot API** - Optional `snapshot.json` output for overlays or websites.
+- **PlaceholderAPI Support** - Team tag placeholders for TAB and other plugins.
+- **Spectator Handling** - Eliminated players moved to a spectator spawn.
+- **Rejoin Support** - Players can rejoin active matches if enabled.
+- **Configurable Messages** - Full MiniMessage support for messages, titles, and actionbars.
+- **Runtime Reload** - Safely reload config when no tournament is running.
 
 ## Commands
 
@@ -73,25 +70,20 @@ Tourneys is intended for empty event servers or dedicated tournament worlds wher
 - `/tourney status` - Show current tournament state.
 - `/tourney reload` - Reload config when no tournament is running.
 - `/tourney bracket` - Open the bracket GUI or print bracket info to console.
-- `/tourney kit save` - Save the admin player's current inventory as the tournament kit.
-- `/tourney team create` - Create a team during registration.
-- `/tourney team create <name>` - Create a named team if custom names are enabled.
+- `/tourney kit save` - Save your current inventory as the tournament kit.
+- `/tourney team create [name]` - Create a team during registration.
 - `/tourney team invite <player>` - Invite a player to your team.
 - `/tourney team accept <team>` - Accept a team invite.
 - `/tourney team leave` - Leave or disband your team during registration.
-- `/tourney team list` - List registered teams.
+- `/tourney team list` - List all registered teams.
 - `/tourney arena create <name>` - Create an arena.
-- `/tourney arena setspawn <arena> teamA` - Set Team A spawn.
-- `/tourney arena setspawn <arena> teamB` - Set Team B spawn.
-- `/tourney arena setspawn <arena> spectator` - Set spectator spawn.
+- `/tourney arena setspawn <arena> teamA|teamB|spectator` - Set an arena spawn.
 - `/tourney arena delete <name>` - Delete an arena.
-- `/tourney arena list` - List arenas and readiness.
+- `/tourney arena list` - List arenas and their readiness.
 
 ## Permission Nodes
 
-Admin permissions are configurable in `config.yml`.
-
-Operators have admin permissions by default through `plugin.yml`.
+Operators have admin permissions by default. All nodes are configurable in `config.yml`.
 
 - `tourney.admin` - Full tournament administration.
 - `tourney.admin.open` - Access to `/tourney open`.
@@ -108,24 +100,18 @@ Operators have admin permissions by default through `plugin.yml`.
 
 ## Installation
 
-1. Download or build the plugin jar.
-2. Place the jar in your server's `plugins` directory.
-3. Start the server once to generate the Tourneys config files.
-4. Stop the server or use `/tourney reload` later after editing config.
-5. Configure lobby spawn, fallback spectator spawn, team size, messages, kit, API, and match settings.
-6. Start the server and create arenas in-game.
+1. **Download**: Get the latest release from the [GitHub releases page](https://github.com/xasciii/Tourneys/releases/latest).
+2. **Install**: Place the plugin JAR in your server's `plugins/` directory.
+3. **Start**: Boot the server to generate config files.
+4. **Configure**: Edit `config.yml` — set lobby spawn, spectator spawn, team size, and match settings.
+5. **Reload**: Apply changes with `/tourney reload`.
+6. **Arenas**: Create arenas in-game before running your first event.
 
 ## Arena Setup
 
-Each arena requires three spawns:
+Each arena requires three spawns before it is considered ready:
 
-- Team A spawn
-- Team B spawn
-- Spectator spawn
-
-Example setup:
-
-```text
+```
 /tourney arena create arena1
 /tourney arena setspawn arena1 teamA
 /tourney arena setspawn arena1 teamB
@@ -133,30 +119,27 @@ Example setup:
 /tourney arena list
 ```
 
-An arena is only ready when all three spawns are set.
-
-If `matches.max-active-matches` is `1`, you only need one ready arena. If you want multiple matches at the same time, create multiple ready arenas and increase `matches.max-active-matches`.
+If `matches.max-active-matches` is `1`, one ready arena is sufficient. For parallel matches, create additional arenas and raise `max-active-matches` accordingly.
 
 ## Kit Setup
 
-The recommended way to create a kit is in-game:
+<!-- Add an image of a filled-out kit inventory here if you have one -->
+<!-- Recommended: docs/kit-example.png -->
 
-1. Join as an admin.
-2. Fill your inventory, hotbar, armor slots, and offhand with the exact match kit.
-3. Run `/tourney kit save`.
-4. The plugin saves the inventory into `kit.yml`.
-5. Start matches normally.
+1. Fill your inventory, hotbar, armor slots, and offhand with the exact match kit.
+2. Run `/tourney kit save`.
+3. The kit is saved to `kit.yml`.
 
-You can also edit `kit.yml` manually. The default file includes readable examples for materials, slots, enchantments, and potion effects.
+You can also edit `kit.yml` manually. The default file includes examples for materials, slots, enchantments, and potion effects.
 
 ## Configuration
 
-Important config paths:
+Key config paths:
 
 - `tournament.display-name` - Display name used in messages.
-- `tournament.type-name` - Format name, such as `2v2 NethPot`, `1v1 Sword`, or `4v4 UHC`.
+- `tournament.type-name` - Format label, e.g. `2v2 NethPot` or `1v1 Sword`.
 - `team.size` - Players per team.
-- `team.minimum-teams` - Minimum teams required before registration can close.
+- `team.minimum-teams` - Minimum teams required to close registration.
 - `team.maximum-teams` - Maximum number of teams.
 - `team.allow-incomplete-teams-on-close` - Allow teams smaller than `team.size`.
 - `matches.max-active-matches` - Maximum simultaneous matches.
@@ -164,55 +147,36 @@ Important config paths:
 - `matches.delay-after-match-ends` - Delay after a match ends.
 - `matches.tie-behavior` - `teamA`, `teamB`, `random`, or `rematch`.
 - `matches.give-kit-on-match-start` - Give the configured kit at match start.
-- `blocked-commands` - Commands blocked during running tournaments.
+- `blocked-commands` - Commands blocked during active tournaments.
 - `bracket.inventory.enabled` - Enable or disable the bracket GUI.
-- `bracket.inventory.auto-rows` - Let the GUI grow by rows as matches are added, up to the configured max rows.
-- `bracket.inventory.materials` - Configure waiting, countdown, active, and finished match items.
+- `bracket.inventory.auto-rows` - Grow GUI rows dynamically up to the configured max.
+- `bracket.inventory.materials` - Items for each match state.
 
 Extra files:
 
 - `language.yml` - Prefix, messages, titles, and actionbars.
 - `kit.yml` - Saved or manually configured tournament kit.
 - `api.yml` - Snapshot output, external bracket URL, and PlaceholderAPI settings.
-- `api.yml` `bracket-url.enabled` - Broadcast an external bracket URL.
-- `api.yml` `snapshot.enabled` - Write `snapshot.json` for overlays or websites.
-- `api.yml` `placeholders.enabled` - Enable PlaceholderAPI placeholders for TAB or other plugins.
-- `api.yml` `placeholders.nametag-format` - Format returned by `%tourneys_nametag%`.
 
 ## PlaceholderAPI
 
-If PlaceholderAPI is installed and `placeholders.enabled` is `true`, Tourneys registers these placeholders:
+If PlaceholderAPI is installed and `placeholders.enabled` is `true` in `api.yml`, Tourneys registers these placeholders:
 
-- `%tourneys_team%` - Team tag, for example `&a[43]`.
-- `%tourneys_nametag%` - Team tag formatted for nametags, for example `&a[43] `.
-- `%tourneys_team_plain%` - Team tag without color codes.
-- `%tourneys_team_color%` - Team color code.
+- `%tourneys_team%` - Team tag, e.g. `&a[43]`.
+- `%tourneys_nametag%` - Tag formatted for nametags, e.g. `&a[43] `.
+- `%tourneys_team_plain%` - Team tag without colour codes.
+- `%tourneys_team_color%` - Team colour code.
 - `%tourneys_team_number%` - Random team number.
 - `%tourneys_in_team%` - `true` or `false`.
 
-For TAB, put `%tourneys_nametag%` next to the player name or in the group/player prefix where you want the team tag to appear.
-
-## Recommended Event Server Setup
-
-Tourneys works best on a clean event server.
-
-Recommended setup:
-
-- Use a dedicated tournament server or world.
-- Disable unrelated gameplay systems during the event.
-- Build a lobby for registration and waiting.
-- Build one or more arenas.
-- Build spectator areas that cannot interfere with active players.
-- Set lobby and fallback spectator spawn in `config.yml`.
-- Use `/tourney kit save` after preparing the exact event kit.
-- Test a full mock bracket before the real event.
+For TAB, place `%tourneys_nametag%` in the player name or group prefix where you want the tag to appear.
 
 ## Credits
 
-Maintainer: [asc](https://github.com/xasciii)
+**Maintainer: [asc](https://github.com/xasciii)**
 
 Built as a standalone Kotlin Paper plugin for configurable Minecraft tournament events.
 
 ## License
 
-This project is licensed under the [GPL3 License](https://github.com/xasciii/Tourneys/).
+This project is licensed under the [GPL3 License](LICENSE).
